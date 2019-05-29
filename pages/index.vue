@@ -9,7 +9,7 @@
     <!-- About -->
     <section class="max-w-800 mx-auto my-72">
       <p class="text-20 leading-relaxed text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vel vero, earum veniam blanditiis, in illo voluptas sit obcaecati totam molestias possimus cupiditate non libero impedit exercitationem optio ad? Sapiente.
+        This app is still in development, so don't freak out if it's still buggy ;)
       </p>
     </section>
 
@@ -38,7 +38,7 @@
       <!-- Goal length -->
       <div class="px-36">
         <label
-          for="start"
+          for="goal"
           class="block font-title text-18 font-bold uppercase">
           Goal length
           <small class="font-normal normal-case ml-5">
