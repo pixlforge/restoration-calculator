@@ -3,6 +3,10 @@ const join = require('path').join
 const tailwindJS = join(__dirname, 'tailwind.config.js')
 
 export default {
+  server: {
+    port: 8882
+  },
+
   mode: 'universal',
 
   /*
