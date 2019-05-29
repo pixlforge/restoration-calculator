@@ -1,4 +1,6 @@
 import pkg from './package'
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.config.js')
 
 export default {
   mode: 'universal',
@@ -7,6 +9,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
@@ -25,6 +30,15 @@ export default {
    ** Global CSS
    */
   css: ['~/assets/css/tailwind.css'],
+
+  webfontloader: {
+    google: {
+      families: [
+        'Montserrat:900',
+        'Nunito:400'
+      ]
+    }
+  },
 
   /*
    ** Plugins to load before mounting the App
@@ -53,6 +67,12 @@ export default {
           exclude: /(node_modules)/
         })
       }
+    },
+    postcss: {
+      plugins: [
+        require('tailwindcss')(tailwindJS),
+        require('autoprefixer')
+      ]
     }
   }
 }

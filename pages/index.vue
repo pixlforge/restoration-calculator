@@ -1,72 +1,96 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        restoration-calculator
-      </h1>
-      <h2 class="subtitle">
-        Online restoration time calculator
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
+  <main class="container font-body text-white py-132">
+
+    <!-- Title -->
+    <h1 class="text-72 font-title font-black text-center">
+      Restoration Calculator
+    </h1>
+
+    <!-- About -->
+    <section class="max-w-800 mx-auto my-72">
+      <p class="text-20 leading-relaxed text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vel vero, earum veniam blanditiis, in illo voluptas sit obcaecati totam molestias possimus cupiditate non libero impedit exercitationem optio ad? Sapiente.
+      </p>
+    </section>
+
+    <!-- Calculator -->
+    <section class="max-w-800 flex mx-auto my-72">
+
+      <!-- Starting length -->
+      <div class="px-36">
+        <label
+          for="start"
+          class="block font-title text-18 font-bold uppercase">
+          Starting length
+          <small class="font-normal normal-case ml-5">
+            (cm)
+          </small>
+        </label>
+        <input
+          id="start"
+          v-model.number="start"
+          type="number"
+          name="start"
+          placeholder="e.g. 5"
+          class="text-30 text-gray-900 font-bold rounded-lg outline-none focus:shadow-outline pl-20 py-10 mt-10">
       </div>
-    </div>
-  </section>
+
+      <!-- Goal length -->
+      <div class="px-36">
+        <label
+          for="start"
+          class="block font-title text-18 font-bold uppercase">
+          Goal length
+          <small class="font-normal normal-case ml-5">
+            (cm)
+          </small>
+        </label>
+        <input
+          id="goal"
+          v-model.number="goal"
+          type="number"
+          name="goal"
+          placeholder="e.g. 9"
+          class="text-30 text-gray-900 font-bold rounded-lg outline-none focus:shadow-outline pl-20 py-10 mt-10">
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section
+      v-if="years"
+      class="text-center my-72">
+      <p class="text-24 mb-30">
+        According to the values you entered, it would take
+      </p>
+      <div class="font-title text-144 font-extrabold leading-none">
+        {{ years }}
+      </div>
+      <div class="font-title text-36 font-bold uppercase">
+        {{ pluralizeYears }}
+      </div>
+      <p class="text-24 mt-30">
+        to reach your desired skin length.
+      </p>
+    </section>
+
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
+  data() {
+    return {
+      start: 5,
+      goal: 9
+    };
+  },
+  computed: {
+    years() {
+      return this.start + this.goal;
+    },
+    pluralizeYears() {
+      return this.years <= 1 ? 'year' : 'years';
+    }
   }
 }
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
