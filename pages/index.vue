@@ -132,7 +132,7 @@
 
       <!-- Results -->
       <section
-        v-if="years > 0 && years !== 'Infinity'"
+        v-if="positive"
         class="section__default">
         <h2 class="title__result">
           We have a result!
@@ -152,7 +152,7 @@
       </section>
 
       <section
-        v-if="start > 1 && goal > 1 && goal === start"
+        v-if="equal"
         class="section__default">
         <h2 class="title__result">
           You're there!
@@ -163,7 +163,7 @@
       </section>
 
       <section
-        v-if="start > 1 && goal > 1 && goal < start"
+        v-if="negative"
         class="section__default">
         <h2 class="title__result">
           Oops!
@@ -200,6 +200,15 @@ export default {
     },
     pluralizeYears() {
       return this.years <= 1 ? 'year' : 'years';
+    },
+    positive() {
+      return this.years > 0 && this.years !== 'Infinity';
+    },
+    equal() {
+      return this.start > 1 && this.goal > 1 && this.goal === this.start;
+    },
+    negative() {
+      return this.start > 1 && this.goal > 1 && this.goal < this.start;
     }
   },
   methods: {
