@@ -1,34 +1,40 @@
 <template>
-  <main class="container font-body text-white py-132">
+  <main class="container__main container">
 
     <!-- Title -->
-    <h1 class="text-72 font-title font-black text-center leading-tight">
+    <h1 class="title__main">
       Foreskin Restoration Calculator
     </h1>
 
-    <div class="max-w-800 mx-auto">
+    <div class="container__inner">
 
       <!-- About -->
-      <section class="my-72">
-        <p class="text-20 leading-relaxed text-center">
+      <section class="section__default">
+        <p class="paragraph__default">
           This app is still in development, so don't freak out if it's still buggy ;)
         </p>
       </section>
 
       <!-- Calculator -->
-      <section class="my-72">
+      <section class="section__default">
 
         <!-- Starting length -->
-        <div class="flex flex-col items-center">
-          <p class="text-24 text-center mb-20">
+        <div class="calculator__section">
+          <div class="calculator__step">
+            1
+          </div>
+          <p class="calculator__paragraph">
             First, measure your current skin length from the base of the penis to the glans, flaccid or erect, and enter it below:
           </p>
+        </div>
+
+        <div class="calculator__group">
           <label
             for="start"
-            class="block font-title text-18 font-bold uppercase">
+            class="calculator__label">
             Starting length
           </label>
-          <span class="text-16">
+          <span class="calculator__units">
             (cm)
           </span>
           <input
@@ -39,21 +45,27 @@
             max="20"
             step="0.1"
             name="start"
-            placeholder="e.g. 5"
-            class="text-30 text-gray-900 font-bold text-center rounded-lg outline-none focus:shadow-outline pl-20 pr-5 py-10 mt-10">
+            placeholder="5"
+            class="calculator__input">
         </div>
 
         <!-- Goal length -->
-        <div class="flex flex-col items-center mt-48">
-          <p class="text-24 text-center mb-20">
+        <div class="calculator__section calculator__section--spaced">
+          <div class="calculator__step">
+            2
+          </div>
+          <p class="calculator__paragraph">
             Then, enter your desired goal length below:
           </p>
+        </div>
+
+        <div class="calculator__group">
           <label
             for="goal"
-            class="block font-title text-18 font-bold uppercase">
+            class="calculator__label">
             Goal length
           </label>
-          <span class="text-16">
+          <span class="calculator__units">
             (cm)
           </span>
           <input
@@ -64,50 +76,99 @@
             max="25"
             step="0.1"
             name="goal"
-            placeholder="e.g. 9"
-            class="text-30 text-gray-900 font-bold text-center rounded-lg outline-none focus:shadow-outline pl-20 pr-5 py-10 mt-10">
+            placeholder="9"
+            class="calculator__input">
+        </div>
+      </section>
+
+      <!-- Commitment -->
+      <section class="section__default">
+        <div class="calculator__section">
+          <div class="calculator__step">
+            3
+          </div>
+          <p class="calculator__paragraph">
+            Finally, your level of commitment plays a large part in the restoration process. What's yours?
+          </p>
+        </div>
+
+        <div class="calculator__button-group-wrapper">
+
+          <div class="calculator__button-group">
+            <button
+              :class="selectedOption.id === 1 ? 'calculator__button--active' : ''"
+              class="calculator__button"
+              @click="selectOption(1)">
+              <span class="calculator__button-label">
+                Not that committed
+              </span>
+            </button>
+          </div>
+
+          <div class="calculator__button-group">
+            <button
+              :class="selectedOption.id === 2 ? 'calculator__button--active' : ''"
+              class="calculator__button"
+              @click="selectOption(2)">
+              <span class="calculator__button-label">
+                Committed
+              </span>
+            </button>
+          </div>
+
+          <div class="calculator__button-group">
+            <button
+              :class="selectedOption.id === 3 ? 'calculator__button--active' : ''"
+              class="calculator__button"
+              @click="selectOption(3)">
+              <span class="calculator__button-label">
+                Very committed
+              </span>
+            </button>
+          </div>
+
         </div>
       </section>
 
       <!-- Results -->
       <section
-        v-if="years > 0"
-        class="text-center my-72">
-        <h2 class="font-title text-48 font-extrabold uppercase mb-30">
+        v-if="years > 0 && years !== 'Infinity'"
+        class="section__default">
+        <h2 class="title__result">
           We have a result!
         </h2>
-        <p class="text-30 mb-30">
+        <p class="paragraph__result">
           According to the values you entered, it would take
         </p>
-        <div class="font-title text-144 font-extrabold leading-none">
+        <div class="calculator__result">
           {{ years }}
         </div>
-        <div class="font-title text-36 font-bold uppercase">
+        <div class="calculator__years">
           {{ pluralizeYears }}
         </div>
-        <p class="text-30 mt-30">
+        <p class="paragraph__result">
           to reach your desired skin length.
         </p>
       </section>
 
       <section
         v-if="start > 1 && goal > 1 && goal === start"
-        class="text-center my-72">
-        <h2 class="font-title text-48 font-extrabold uppercase mb-30">
+        class="section__default">
+        <h2 class="title__result">
           You're there!
         </h2>
-        <p class="text-30 mb-30">
+        <p class="paragraph__error">
           If your starting and goal length are the same, then you don't need to do anything, which is fine.
         </p>
       </section>
 
       <section
         v-if="start > 1 && goal > 1 && goal < start"
-        class="text-center my-72">
-        <h2 class="font-title text-48 font-extrabold uppercase mb-30">
+        class="section__default">
+        <h2 class="title__result">
           Oops!
         </h2>
-        <p class="text-30 mb-30">
+        <p class="paragraph__error">
           Your desired goal length should be higher than your starting length.
         </p>
       </section>
@@ -121,15 +182,31 @@ export default {
   data() {
     return {
       start: null,
-      goal: null
+      goal: null,
+      selectedOption: {
+        id: null,
+        value: null
+      },
+      options: [
+        { id: 1, value: 5 },
+        { id: 2, value: 3.8 },
+        { id: 3, value: 2.8 }
+      ]
     };
   },
   computed: {
     years() {
-      return Number.parseFloat(3.8 * Math.log2(this.goal / this.start)).toPrecision(2);
+      return Number.parseFloat(this.selectedOption.value * Math.log2(this.goal / this.start)).toPrecision(2);
     },
     pluralizeYears() {
       return this.years <= 1 ? 'year' : 'years';
+    }
+  },
+  methods: {
+    selectOption(value) {
+      this.selectedOption = this.options.find(option => {
+        return option.id === value;
+      });
     }
   }
 }

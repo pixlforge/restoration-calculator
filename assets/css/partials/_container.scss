@@ -1,0 +1,9 @@
+.container {
+  &__main {
+    @apply font-body text-white py-132;
+  }
+
+  &__inner {
+    @apply max-w-800 mx-auto;
+  }
+}

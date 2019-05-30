@@ -63,8 +63,14 @@ module.exports = {
       '-132': '-13.2rem',
     },
     extend: {
+      width: {
+        '60': '6rem',
+      },
+      height: {
+        '60': '6rem',
+      },
       boxShadow: {
-        'outline': '0 0 0 3px rgba(99, 179, 237, 1)'
+        'outline': '0 0 0 3px rgba(78, 209, 196, 1)'
       }
     }
   },
@@ -77,7 +83,9 @@ module.exports = {
         }
       }
 
-      addUtilities(gradients)
+      addUtilities(gradients, {
+        variants: ['hover']
+      })
     }
   ]
 }

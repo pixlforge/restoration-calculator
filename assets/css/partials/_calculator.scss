@@ -1,0 +1,70 @@
+.calculator {
+  &__section {
+    @apply flex items-center;
+  }
+
+  &__step {
+    @apply w-60 h-60 bg-white rounded-full flex justify-center items-center font-title text-30 font-bold text-blue-500;
+
+    &--spaced {
+      @apply mt-48;
+    }
+  }
+
+  &__paragraph {
+    @apply flex-1 text-24 text-center ml-20;
+  }
+
+  &__group {
+    @apply flex flex-col items-center mt-20;
+  }
+
+  &__label {
+    @apply block font-title text-18 font-bold uppercase;
+  }
+
+  &__units {
+    @apply text-16;
+  }
+
+  &__input {
+    @apply text-30 text-gray-900 font-bold text-center rounded-lg outline-none pl-20 pr-5 py-10 mt-10;
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+
+  &__button-group-wrapper {
+    @apply flex my-72 -mx-5;
+  }
+
+  &__button-group {
+    @apply w-1/3 px-5;
+  }
+
+  &__button {
+    @apply w-full bg-indigo-800 shadow-md transition rounded-lg outline-none py-20;
+
+    &:hover,
+    &--active {
+      @apply bg-indigo-900 shadow-lg;
+    }
+
+    &:focus {
+      @apply shadow-outline;
+    }
+  }
+
+  &__button-label {
+    @apply text-16 font-black uppercase;
+  }
+
+  &__result {
+    @apply font-title text-144 font-extrabold leading-none mt-30;
+  }
+
+  &__years {
+    @apply font-title text-36 font-bold uppercase mb-30;
+  }
+}

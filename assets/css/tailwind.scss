@@ -1,0 +1,38 @@
+@tailwind base;
+
+@tailwind components;
+
+@import "partials/calculator";
+@import "partials/container";
+@import "partials/paragraph";
+@import "partials/section";
+@import "partials/title";
+
+@tailwind utilities;
+
+html {
+  font-size: 10px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.transition {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+}
+
+button {
+  outline: none !important;
+}

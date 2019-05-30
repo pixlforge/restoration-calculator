@@ -1,0 +1,9 @@
+.title {
+  &__main {
+    @apply text-72 font-title font-black text-center leading-tight;
+  }
+
+  &__result {
+    @apply font-title text-48 font-extrabold uppercase mb-30;
+  }
+}

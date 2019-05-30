@@ -33,7 +33,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/tailwind.scss'],
 
   webfontloader: {
     google: {

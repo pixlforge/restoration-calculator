@@ -1,0 +1,13 @@
+.paragraph {
+  &__default {
+    @apply text-24 leading-relaxed text-center;
+  }
+
+  &__result {
+    @apply text-30;
+  }
+
+  &__error {
+    @apply text-30 mb-30;
+  }
+}
