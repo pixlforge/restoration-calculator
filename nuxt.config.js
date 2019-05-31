@@ -38,7 +38,7 @@ export default {
   webfontloader: {
     google: {
       families: [
-        'Montserrat:900',
+        'Montserrat:800,900',
         'Nunito:400,700'
       ]
     }
