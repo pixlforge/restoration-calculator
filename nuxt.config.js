@@ -39,7 +39,7 @@ export default {
     google: {
       families: [
         'Montserrat:900',
-        'Nunito:400'
+        'Nunito:400,700'
       ]
     }
   },
