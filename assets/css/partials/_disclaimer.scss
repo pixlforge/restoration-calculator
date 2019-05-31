@@ -1,0 +1,17 @@
+.disclaimer {
+  &__container {
+    @apply p-20;
+  }
+
+  &__paragraph {
+    @apply text-12 text-white text-center;
+  }
+
+  &__link {
+    @apply font-bold;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}

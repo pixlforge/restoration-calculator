@@ -11,12 +11,22 @@
       <!-- About -->
       <section class="section__default">
         <p class="paragraph__default">
-          This app is still in development, so don't freak out if it's still buggy ;)
+          This app was made to help people restoring their foreskins estimate how long their journey is going to take. It uses a formula developed by Reddit user
+          <a
+            href="https://www.reddit.com/user/Icerest/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="paragraph__link">
+            /u/Icerest</a>.
         </p>
       </section>
 
       <!-- Calculator -->
       <section class="section__default">
+
+        <h2 class="title__default">
+          Let's find out
+        </h2>
 
         <!-- Starting length -->
         <div class="calculator__section">
@@ -134,7 +144,7 @@
       <section
         v-if="positive"
         class="section__default">
-        <h2 class="title__result">
+        <h2 class="title__default">
           We have a result!
         </h2>
         <p class="paragraph__result">

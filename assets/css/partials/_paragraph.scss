@@ -1,6 +1,14 @@
 .paragraph {
   &__default {
-    @apply text-24 leading-relaxed text-center;
+    @apply text-20 leading-relaxed text-center;
+  }
+
+  &__link {
+    @apply font-bold;
+
+    &:hover {
+      @apply underline;
+    }
   }
 
   &__result {
