@@ -63,6 +63,9 @@ module.exports = {
       '-132': '-13.2rem',
     },
     extend: {
+      screens: {
+        'xxl': '1500px'
+      },
       width: {
         '60': '6rem',
       },

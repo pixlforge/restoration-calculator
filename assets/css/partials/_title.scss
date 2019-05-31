@@ -1,9 +1,17 @@
 .title {
   &__main {
-    @apply text-72 font-title font-black text-center leading-tight;
+    @apply text-36 font-title font-black text-center leading-tight;
+
+    @screen md {
+      @apply text-72;
+    }
   }
 
   &__result {
-    @apply font-title text-48 font-extrabold uppercase mb-30;
+    @apply font-title text-36 font-extrabold uppercase mb-30;
+
+    screen md {
+      @apply text-48;
+    }
   }
 }

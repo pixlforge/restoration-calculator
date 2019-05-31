@@ -50,7 +50,7 @@
         </div>
 
         <!-- Goal length -->
-        <div class="calculator__section calculator__section--spaced">
+        <div class="calculator__section">
           <div class="calculator__step">
             2
           </div>

@@ -4,7 +4,11 @@
   }
 
   &__result {
-    @apply text-30;
+    @apply text-20;
+
+    @screen md {
+      @apply text-30;
+    }
   }
 
   &__error {
