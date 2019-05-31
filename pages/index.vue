@@ -164,7 +164,7 @@
       <section
         v-if="equal"
         class="section__default">
-        <h2 class="title__result">
+        <h2 class="title__default">
           You're there!
         </h2>
         <p class="paragraph__error">
@@ -175,7 +175,7 @@
       <section
         v-if="negative"
         class="section__default">
-        <h2 class="title__result">
+        <h2 class="title__default">
           Oops!
         </h2>
         <p class="paragraph__error">
