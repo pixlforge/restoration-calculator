@@ -53,6 +53,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    'nuxt-webfontloader',
     [
       "@nuxtjs/google-analytics",
       {
