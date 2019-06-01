@@ -11,7 +11,7 @@
       <!-- About -->
       <section class="section__default">
         <p class="paragraph__default">
-          This app was made to help people restoring their foreskins estimate how long their journey is going to take. It uses a formula developed by Reddit user
+          This app was made to help people restoring their foreskins estimate how long their journey is going to take. It uses a formula developed by <em>Reddit</em> user
           <a
             href="https://www.reddit.com/user/Icerest/"
             target="_blank"
@@ -34,7 +34,7 @@
             1
           </div>
           <p class="calculator__paragraph">
-            First, measure your current skin length from the base of the penis to the glans, flaccid or erect, and enter it below:
+            First, measure your current skin length from the base of the penis to the scar line, flaccid or erect, and enter it below:
           </p>
         </div>
 
@@ -65,7 +65,7 @@
             2
           </div>
           <p class="calculator__paragraph">
-            Then, enter your desired goal length below:
+            Then, measure your desired goal length and enter it below:
           </p>
         </div>
 
