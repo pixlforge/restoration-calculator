@@ -45,7 +45,7 @@
             Starting length
           </label>
           <span class="calculator__units">
-            (cm)
+            (cm / in)
           </span>
           <input
             id="start"
@@ -76,7 +76,7 @@
             Goal length
           </label>
           <span class="calculator__units">
-            (cm)
+            (cm / in)
           </span>
           <input
             id="goal"
