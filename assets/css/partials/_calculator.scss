@@ -12,6 +12,22 @@ input[type=number]::-webkit-outer-spin-button {
     @apply w-60 h-60 bg-white rounded-full flex justify-center items-center font-title text-30 font-bold text-blue-500;
   }
 
+  &__schema {
+    @apply w-full mx-auto;
+
+    @screen sm {
+      @apply my-72;
+    }
+
+    @screen md {
+      @apply my-96;
+    }
+
+    @screen lg {
+      @apply my-132;
+    }
+  }
+
   &__paragraph {
     @apply flex-1 text-18 text-left ml-20;
 

@@ -28,6 +28,8 @@
           Let's find out
         </h2>
 
+        <Schema class="calculator__schema"/>
+
         <!-- Starting length -->
         <div class="calculator__section">
           <div class="calculator__step">
@@ -183,6 +185,7 @@
         </p>
       </section>
 
+      <!-- FAQ -->
       <section class="section__default">
         <h2 class="title__default">
           FAQ
@@ -207,12 +210,18 @@
           </li>
         </ul>
       </section>
+
     </div>
   </main>
 </template>
 
 <script>
+import Schema from '@/components/Schema';
+
 export default {
+  components: {
+    Schema
+  },
   data() {
     return {
       start: null,
