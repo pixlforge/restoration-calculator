@@ -33,7 +33,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__input {
-    @apply w-96 text-30 text-gray-900 font-bold text-center rounded-lg outline-none p-10 mt-10;
+    @apply w-132 text-30 text-gray-900 font-bold text-center rounded-lg outline-none p-10 mt-10;
 
     &:focus {
       @apply shadow-outline;

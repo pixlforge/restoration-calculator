@@ -182,8 +182,32 @@
           Your desired goal length should be higher than your starting length.
         </p>
       </section>
-    </div>
 
+      <section class="section__default">
+        <h2 class="title__default">
+          FAQ
+        </h2>
+
+        <ul class="faq__list">
+          <li class="faq__list-item">
+            <p class="faq__question">
+              How can I distinguish between inner and outer skin in the calculator?
+            </p>
+            <p class="faq__answer">
+              To get estimate for both inner and outer the calculator needs to be run separately for outer skin and inner skin.
+            </p>
+          </li>
+          <li class="faq__list-item">
+            <p class="faq__question">
+              Does this app gather any user information? What about my privacy?
+            </p>
+            <p class="faq__answer">
+              This app does not keep track of any user information except for Google Analytics.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 </template>
 

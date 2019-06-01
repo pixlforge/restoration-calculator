@@ -1,0 +1,17 @@
+.faq {
+  &__list {
+    @apply mt-48;
+  }
+
+  &__list-item {
+    @apply my-30;
+  }
+
+  &__question {
+    @apply text-24 font-bold leading-relaxed mb-24;
+  }
+
+  &__answer {
+    @apply text-20 italic leading-relaxed my-16;
+  }
+}
