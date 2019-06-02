@@ -104,7 +104,7 @@
             3
           </div>
           <p class="calculator__paragraph">
-            Finally, your level of commitment plays a large part in the restoration process. What's yours?
+            Finally, estimate your growth rate by choosing your level of commitment to tugging:
           </p>
         </div>
 
@@ -115,9 +115,12 @@
               :class="selectedOption.id === 1 ? 'calculator__button--active' : ''"
               class="calculator__button"
               @click="selectOption(1)">
-              <span class="calculator__button-label">
+              <div class="calculator__button-label">
                 Not that committed
-              </span>
+              </div>
+              <div class="calculator__button-info">
+                Tugs substandard amount. Estimated to have slower than the average growth rate.
+              </div>
             </button>
           </div>
 
@@ -126,9 +129,12 @@
               :class="selectedOption.id === 2 ? 'calculator__button--active' : ''"
               class="calculator__button"
               @click="selectOption(2)">
-              <span class="calculator__button-label">
+              <div class="calculator__button-label">
                 Committed
-              </span>
+              </div>
+              <div class="calculator__button-info">
+                Tugs moderate amount. Estimated to have the average growth rate.
+              </div>
             </button>
           </div>
 
@@ -137,9 +143,12 @@
               :class="selectedOption.id === 3 ? 'calculator__button--active' : ''"
               class="calculator__button"
               @click="selectOption(3)">
-              <span class="calculator__button-label">
+              <div class="calculator__button-label">
                 Very committed
-              </span>
+              </div>
+              <div class="calculator__button-info">
+                Tugs superior amount. Estimated to have faster than the average growth rate.
+              </div>
             </button>
           </div>
 

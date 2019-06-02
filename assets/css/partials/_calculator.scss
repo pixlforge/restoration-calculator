@@ -57,7 +57,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__button-group-wrapper {
-    @apply flex flex-col items-center -mx-5 my-72;
+    @apply flex flex-col -mx-5 my-72;
 
     @screen md {
       @apply flex-row;
@@ -73,7 +73,11 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__button {
-    @apply w-full bg-indigo-800 shadow-md transition rounded-lg outline-none py-20;
+    @apply w-full bg-indigo-800 shadow-md transition rounded-lg outline-none flex flex-col items-center px-16 py-20;
+
+    @screen md {
+      @apply min-h-136;
+    }
 
     &:hover,
     &--active {
@@ -86,7 +90,11 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__button-label {
-    @apply text-16 font-black uppercase;
+    @apply text-16 font-black uppercase mb-5;
+  }
+
+  &__button-info {
+    @apply text-14 font-light italic;
   }
 
   &__result {

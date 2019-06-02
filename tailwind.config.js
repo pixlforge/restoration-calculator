@@ -73,6 +73,9 @@ module.exports = {
       height: {
         '60': '6rem',
       },
+      minHeight: {
+        '136': '13.6rem'
+      },
       boxShadow: {
         'outline': '0 0 0 3px rgba(78, 209, 196, 1)'
       }
