@@ -47,7 +47,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~plugins/vue-js-modal'
+  ],
 
   /*
    ** Nuxt.js modules
@@ -59,7 +61,7 @@ export default {
       {
         id: "UA-141040527-1"
       }
-    ],
+    ]
   ],
 
   /*

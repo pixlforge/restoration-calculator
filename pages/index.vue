@@ -28,8 +28,6 @@
           Let's find out
         </h2>
 
-        <Schema class="calculator__schema"/>
-
         <!-- Starting length -->
         <div class="calculator__section">
           <div class="calculator__step">
@@ -38,6 +36,9 @@
           <p class="calculator__paragraph">
             First, measure your current skin length from the base of the penis to the scar line, flaccid or erect, and enter it below:
           </p>
+          <IconQuestionCircle
+            class="icon__default"
+            @click.native="openStartingModal"/>
         </div>
 
         <div class="calculator__group">
@@ -69,6 +70,9 @@
           <p class="calculator__paragraph">
             Then, measure your desired goal length and enter it below:
           </p>
+          <IconQuestionCircle
+            class="icon__default"
+            @click.native="openGoalModal"/>
         </div>
 
         <div class="calculator__group">
@@ -212,15 +216,22 @@
       </section>
 
     </div>
+
+    <ModalStarting/>
+    <ModalGoal/>
   </main>
 </template>
 
 <script>
-import Schema from '@/components/Schema';
+import ModalStarting from '@/components/modals/ModalStarting';
+import ModalGoal from '@/components/modals/ModalGoal';
+import IconQuestionCircle from '@/components/icons/IconQuestionCircle';
 
 export default {
   components: {
-    Schema
+    IconQuestionCircle,
+    ModalStarting,
+    ModalGoal
   },
   data() {
     return {
@@ -255,6 +266,12 @@ export default {
     }
   },
   methods: {
+    openStartingModal() {
+      this.$modal.show('starting');
+    },
+    openGoalModal() {
+      this.$modal.show('goal');
+    },
     selectOption(value) {
       this.selectedOption = this.options.find(option => {
         return option.id === value;

@@ -1,0 +1,9 @@
+.icon {
+  &__default {
+    @apply inline w-24 text-white transition cursor-pointer;
+
+    &:hover {
+      @apply text-indigo-800;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.modal {
+  &__container {
+    @apply w-full h-full gradient-blue-indigo flex flex-col justify-center items-center p-60;
+  }
+
+  &__close {
+    @apply absolute top-0 right-0 text-24 font-black text-white transition mr-24 mt-16;
+
+    &:hover {
+      @apply text-indigo-800;
+    }
+  }
+}

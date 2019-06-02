@@ -3,6 +3,10 @@
     @apply text-20 leading-relaxed text-center;
   }
 
+  &__modal {
+    @apply max-w-600 text-24 font-bold leading-relaxed text-center;
+  }
+
   &__link {
     @apply font-bold;
 
